@@ -1,0 +1,93 @@
+\documentclass{jsarticle}
+\usepackage{fenrir_v1_4_0}
+\usepackage{autocount}
+\usepackage{ethm_v1_1_0}
+\mathtoolsset{showonlyrefs=true}
+
+\begin{document}
+\textbf{Exercise 5.33 (Study of multidimensional Brownian motion)}
+$B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ スタートの $N$ 次元 $(\clf_t)$-BMとする．
+ここで $N$ は2以上の整数とする．
+\begin{enumerate}
+    \item
+    $\abs{B_t}^2$ は連続semimartingaleであり，$\abs{B_t}^2$ のmartingale partがtrue martingaleであることを示せ．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    \begin{align}
+        \beta_t
+        = \sum_{i=1}^{N}\int_{0}^{t}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
+    \end{align}
+    と定める（ただし $\abs{B_s}=0$ のとき $\frac{B_{s}^{i}}{\abs{B_s}}=0$ とする）．
+    $\beta_t$ の定義に現れる確率積分の定義を正当化し，さらに $(\beta_t)_{t\ge0}$ が0スタートの $(\clf_t)$-BMであることを示せ．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    $$
+    \abs{B_t}^2
+    = \abs{x}^2+2\int_0^t \abs{B_t}d\beta_s+Nt
+    $$
+    が成り立つことを示せ．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    以降，$x\neq0$ を仮定する．
+    $\ep\in(0,\abs{x}),T_{\ep}=\inf\set{t\ge0}{\abs{B_t}\le\ep}$ とする．
+    ここで任意の $a>0$ に対し
+    $$
+    f(a)=
+    \begin{cases}
+        \log a & (N=2), \\
+        a^{2-N} & (N\ge3)
+    \end{cases}
+    $$
+    と定める．
+    $f(\abs{B_{t\wedge T_{\ep}}})$ がCLMとなることを示せ．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    $R>\abs{x},S_R=\inf\set{t\ge0}{\abs{B_t}\ge R}$ とする．
+    $$
+    P(T_\ep<S_R)=\frac{f(R)-f(\abs{x})}{f(R)-f(\ep)}
+    $$
+    となることを示せ．
+    また $\ep\to0$ としたとき $P(T_\ep<S_R)\to0$ となることを確かめ，a.s.で任意の $t\ge0$ に対し $B_t\neq0$ となることを示せ．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    a.s.で任意の $t\ge0$ に対し
+    $$
+    \abs{B_t}
+    = \abs{x}+\beta_t+\frac{N-1}{2}\int_0^t \frac{ds}{\abs{B_s}}
+    $$
+    となることを示せ．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    $N\ge3$を仮定する．
+    a.s.で$t\to\infty$ としたとき $\abs{B_t}\to\infty$ となることを示せ（ヒント：$\abs{B_t}^{2-N}$ が非負supermartingaleであることを確かめよ）．
+    \begin{proof}
+        
+    \end{proof}
+    
+    \item
+    $N=3$ を仮定する．
+    Gaussian densityの形式を用いて，r.v.の族 $(\abs{B_t}^{-1})_{t\ge0}$ が $L^2$-bdd.であることを確かめよ．
+    また $(\abs{B_t}^{-1})_{t\ge0}$ がCLMであり，かつtrue martingaleでないことを示せ．
+    \begin{proof}
+        
+    \end{proof}
+\end{enumerate}
+\end{document}

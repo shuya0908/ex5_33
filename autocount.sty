@@ -1,0 +1,19 @@
+\ProvidesPackage{autocount}[2021/05/11 v1.1]
+
+\newcount\an
+\an=1
+\newcommand{\anum}[1][\the\an]{$#1$\global\an=#1\global\advance\an by 1}
+
+\newcount\anflfl
+\anflfl=1
+\newcommand{\anumfl}[2][\the\anflfl]{$#2.#1$\global\anflfl=#1\global\advance\anflfl by 1}
+
+\newcounter{anr}
+\newcounter{anrop}
+\setcounter{anr}{1}
+\newcommand{\anumr}[1][\value{anr}]{\setcounter{anrop}{#1}\roman{anrop}\addtocounter{anrop}{1}\setcounter{anr}{\value{anrop}}}
+
+\newcounter{anR}
+\newcounter{anRop}
+\setcounter{anR}{1}
+\newcommand{\anumR}[1][\value{anR}]{\setcounter{anRop}{#1}\Roman{anRop}\addtocounter{anRop}{1}\setcounter{anR}{\value{anRop}}}
