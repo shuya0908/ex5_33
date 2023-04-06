@@ -12,7 +12,23 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \item
     $\abs{B_t}^2$ は連続semimartingaleであり，$\abs{B_t}^2$ のmartingale partがtrue martingaleであることを示せ．
     \begin{proof}
-        
+        $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingaleなので，伊藤の公式が適用できて，a.s.で任意の $t\ge0$ に対し
+        \begin{align}
+            \abs{B_t}^2
+            &= \abs{B_0}^2
+            + \sum_{i=1}^{N}\int_{0}^{t}\frac{\partial}{\partial x_i}\abs{B_s}^2 dB_s^i
+            + \frac{1}{2}\sum_{i,j=1}^{N}\int_{0}^{t}\frac{\partial^2}{\partial x_i\partial x_j}\abs{B_s}^2 d\gen{B^i,B^j}_s \\
+            &= \abs{x}^2
+            + \sum_{i=1}^{N}\int_{0}^{t}\frac{\partial}{\partial x_i}\abs{B_s}^2 dB_s^i
+            + \frac{1}{2}\sum_{i=1}^{N}\int_{0}^{t}\frac{\partial^2}{\partial x_i^2}\abs{B_s}^2 ds
+            \quad(i\neq j\implies\gen{B^i,B^j}=0)\\
+            &= \abs{x}^2
+            + \sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i
+            + Nt.
+        \end{align}
+        \begin{screen}
+            $\because)$ $\abs{B}^2=(B^1)^2+\dotsb+(B^N)^2$ より $\frac{\partial}{\partial x_i}\abs{B}^2=2B^i, \frac{\partial^2}{\partial x_i^2}\abs{B}^2=2.$
+        \end{screen}
     \end{proof}
     
     \item
