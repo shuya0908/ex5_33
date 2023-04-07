@@ -62,11 +62,31 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \item
     $$
     \abs{B_t}^2
-    = \abs{x}^2+2\int_0^t \abs{B_t}d\beta_s+Nt
+    = \abs{x}^2+2\int_0^t \abs{B_s}d\beta_s+Nt
     $$
     が成り立つことを示せ．
-    \begin{proof}\textcolor{red}{（途中）}
-        
+    \begin{proof}
+        \begin{align}
+            \frac{d\beta_t}{dB_t^i}
+            = \sum_{i=1}^{N}\frac{d}{dB_t^i}\int_0^t\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
+            = \sum_{i=1}^{N}\frac{B_{t}^{i}}{\abs{B_t}}
+        \end{align}
+        より $d\beta_t=\sum_{i=1}^{N}\frac{B_{t}^{i}}{\abs{B_t}}dB_t^i$ となるので
+        \begin{align}
+            \abs{B_t}^2
+            &= \abs{x}^2
+            + 2\sum_{i=1}^{N}\int_{0}^{t}B_s^i dB_s^i
+            + Nt \\
+            &= \abs{x}^2
+            + 2\sum_{i=1}^{N}\int_{0}^{t}\frac{B_{s}^{i}}{\abs{B_s}}\abs{B_s}dB_s^i
+            + Nt \\
+            &= \abs{x}^2
+            + 2\int_{0}^{t}\abs{B_s}\sum_{i=1}^{N}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
+            + Nt \\
+            &= \abs{x}^2
+            + 2\int_{0}^{t}\abs{B_s}d\beta_s
+            + Nt.
+        \end{align}
     \end{proof}
     
     \item
