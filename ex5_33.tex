@@ -11,7 +11,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
 \begin{enumerate}
     \item
     $\abs{B_t}^2$ は連続semimartingaleであり，$\abs{B_t}^2$ のmartingale partがtrue martingaleであることを示せ．
-    \begin{proof}
+    \begin{proof}\textcolor{red}{（途中）}
         $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingaleなので，伊藤の公式が適用できて，a.s.で任意の $t\ge0$ に対し
         \begin{align}
             \abs{B_t}^2
@@ -23,7 +23,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             + \frac{1}{2}\sum_{i=1}^{N}\int_{0}^{t}\frac{\partial^2}{\partial x_i^2}\abs{B_s}^2 ds
             \quad(i\neq j\implies\gen{B^i,B^j}=0)\\
             &= \abs{x}^2
-            + \sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i
+            + 2\sum_{i=1}^{N}\int_{0}^{t}B_s^i dB_s^i
             + Nt.
         \end{align}
         \begin{screen}
@@ -38,18 +38,55 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \end{align}
     と定める（ただし $\abs{B_s}=0$ のとき $\frac{B_{s}^{i}}{\abs{B_s}}=0$ とする）．
     $\beta_t$ の定義に現れる確率積分の定義を正当化し，さらに $(\beta_t)_{t\ge0}$ が0スタートの $(\clf_t)$-BMであることを示せ．
-    \begin{proof}
-        
+    \begin{proof}\textcolor{red}{（途中）}
+        任意の $1\le i\le N$ に対し $\frac{B^i}{\abs{B}}\le1$ より，a.s.で任意の $t\ge0$ に対し
+        \begin{align}
+            \int_0^t \left(\frac{B_s^i}{\abs{B_s}}\right)^2 d\gen{B^i, B^i}_s
+            \le \int_0^t ds = t < \infty
+        \end{align}
+        が成り立つので，任意の $1\le i\le N$ に対し $\frac{B^i}{\abs{B}}\in L_{\mathrm{loc}}^2(B^i).$
+        よって $\int_{0}^{t}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i$ は確率積分の意味でwell-definedなCLMである．
+
+        したがって $\beta$ は $(\clf_t)$-CLMである\nazo．
+        ここで
+        \begin{align}
+            \gen{\beta, \beta}_t
+            &= \gen{\sum_{i=1}^{N}\int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i, \sum_{i=1}^{N}\int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i}_t \\
+            &= \sum_{i=1}^{N}\gen{\int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i, \int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i}_t \\
+            &= \sum_{i=1}^{N}\int_{0}^{t}\frac{(B_{s}^{i})^2}{\abs{B_s}^2}ds
+            = \int_{0}^{t}\frac{\abs{B_s}^2}{\abs{B_s}^2}ds = t
+        \end{align}
+        が成り立つことより，$\beta$ は0スタートの $(\clf_t)$-BMである．
     \end{proof}
     
     \item
     $$
     \abs{B_t}^2
-    = \abs{x}^2+2\int_0^t \abs{B_t}d\beta_s+Nt
+    = \abs{x}^2+2\int_0^t \abs{B_s}d\beta_s+Nt
     $$
     が成り立つことを示せ．
     \begin{proof}
-        
+        \begin{align}
+            \frac{d\beta_t}{dB_t^i}
+            = \sum_{i=1}^{N}\frac{d}{dB_t^i}\int_0^t\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
+            = \sum_{i=1}^{N}\frac{B_{t}^{i}}{\abs{B_t}}
+        \end{align}
+        より $d\beta_t=\sum_{i=1}^{N}\frac{B_{t}^{i}}{\abs{B_t}}dB_t^i$ となるので
+        \begin{align}
+            \abs{B_t}^2
+            &= \abs{x}^2
+            + 2\sum_{i=1}^{N}\int_{0}^{t}B_s^i dB_s^i
+            + Nt \\
+            &= \abs{x}^2
+            + 2\sum_{i=1}^{N}\int_{0}^{t}\frac{B_{s}^{i}}{\abs{B_s}}\abs{B_s}dB_s^i
+            + Nt \\
+            &= \abs{x}^2
+            + 2\int_{0}^{t}\abs{B_s}\sum_{i=1}^{N}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
+            + Nt \\
+            &= \abs{x}^2
+            + 2\int_{0}^{t}\abs{B_s}d\beta_s
+            + Nt.
+        \end{align}
     \end{proof}
     
     \item
@@ -65,7 +102,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     $$
     と定める．
     $f(\abs{B_{t\wedge T_{\ep}}})$ がCLMとなることを示せ．
-    \begin{proof}
+    \begin{proof}\textcolor{red}{（途中）}
         
     \end{proof}
     
@@ -76,7 +113,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     $$
     となることを示せ．
     また $\ep\to0$ としたとき $P(T_\ep<S_R)\to0$ となることを確かめ，a.s.で任意の $t\ge0$ に対し $B_t\neq0$ となることを示せ．
-    \begin{proof}
+    \begin{proof}\textcolor{red}{（途中）}
         
     \end{proof}
     
@@ -87,14 +124,14 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     = \abs{x}+\beta_t+\frac{N-1}{2}\int_0^t \frac{ds}{\abs{B_s}}
     $$
     となることを示せ．
-    \begin{proof}
+    \begin{proof}\textcolor{red}{（途中）}
         
     \end{proof}
     
     \item
     $N\ge3$を仮定する．
     a.s.で$t\to\infty$ としたとき $\abs{B_t}\to\infty$ となることを示せ（ヒント：$\abs{B_t}^{2-N}$ が非負supermartingaleであることを確かめよ）．
-    \begin{proof}
+    \begin{proof}\textcolor{red}{（途中）}
         
     \end{proof}
     
@@ -102,7 +139,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     $N=3$ を仮定する．
     Gaussian densityの形式を用いて，r.v.の族 $(\abs{B_t}^{-1})_{t\ge0}$ が $L^2$-bdd.であることを確かめよ．
     また $(\abs{B_t}^{-1})_{t\ge0}$ がCLMであり，かつtrue martingaleでないことを示せ．
-    \begin{proof}
+    \begin{proof}\textcolor{red}{（途中）}
         
     \end{proof}
 \end{enumerate}
