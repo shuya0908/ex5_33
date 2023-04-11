@@ -124,8 +124,25 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     = \abs{x}+\beta_t+\frac{N-1}{2}\int_0^t \frac{ds}{\abs{B_s}}
     $$
     となることを示せ．
-    \begin{proof}\textcolor{red}{（途中）}
-        
+    \begin{proof}
+        $F(x)=\abs{x}$ と定めると $F\in C^\infty(\real^N\setminus\{0\})$ であり，$\frac{\partial F}{\partial x_i}(x)=\frac{x_i}{\abs{x}}, \frac{\partial^2 F}{\partial x_i^2}(x)=\frac{\abs{x}^2-x_i^2}{\abs{x}^3}.$
+        a.s.で任意の $t\ge0$ に対し $B_t\in\real^N\setminus\{0\}$ より，伊藤の公式から
+        \begin{align}
+            \abs{B_t}
+            = F(B_t)
+            &= \abs{x}
+            + \sum_{i=1}^{N}\int_0^t \frac{B_s^i}{\abs{B_s}}dB_s^i
+            + \frac{1}{2}\sum_{i=1}^{N}\int_0^t \frac{\abs{B_s}^2-(B_s^i)^2}{\abs{B_s}^3}ds \\
+            &= \abs{x}
+            + \beta_t
+            + \frac{1}{2}\int_0^t \frac{N\abs{B_s}^2-\sum_{i=1}^{N}(B_s^i)^2}{\abs{B_s}^3}ds \\
+            &= \abs{x}
+            + \beta_t
+            + \frac{1}{2}\int_0^t \frac{(N-1)\abs{B_s}^2}{\abs{B_s}^3}ds \\
+            &= \abs{x}
+            + \beta_t
+            + \frac{N-1}{2}\int_0^t \frac{ds}{\abs{B_s}}.
+        \end{align}
     \end{proof}
     
     \item
