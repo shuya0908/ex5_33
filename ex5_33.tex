@@ -53,7 +53,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             \gen{\beta, \beta}_t
             &= \gen{\sum_{i=1}^{N}\int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i, \sum_{i=1}^{N}\int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i}_t \\
             &= \sum_{i=1}^{N}\gen{\int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i, \int_{0}^{\cdot}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i}_t \\
-            &= \sum_{i=1}^{N}\int_{0}^{t}\frac{(B_{s}^{i})^2}{\abs{B_s}^2}ds
+            &= \int_{0}^{t}\frac{\sum_{i=1}^{N}(B_{s}^{i})^2}{\abs{B_s}^2}ds
             = \int_{0}^{t}\frac{\abs{B_s}^2}{\abs{B_s}^2}ds = t
         \end{align}
         が成り立つことより，$\beta$ は0スタートの $(\clf_t)$-BMである．
