@@ -120,13 +120,13 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         ここで，任意の $t\ge0,\omega\in\Omega$ に対し $\abs{B_{t\wedge T_\ep}(\omega)}\ge\ep$ が成り立つので，$B_{t\wedge T_\ep}\in\real^N\setminus\{0\}.$
         伊藤の公式より
         \begin{align}
-            f(\abs{B_{t\wedge T_\ep}})
-            &= F(B_{t\wedge T_\ep}) \\
+            & f(\abs{B_{t\wedge T_\ep}})
+            = F(B_{t\wedge T_\ep}) \\
             &= 
             \begin{cases}
                 f(\abs{x})
-                + \sum_{i=1}^{N}\int_0^t\frac{B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^2}dB_s^i
-                + \frac{1}{2}\sum_{i=1}^{N}\int_0^t\frac{1}{\abs{B_{s\wedge T_\ep}}^2}\left(1-\frac{2(B_{s\wedge T_\ep}^i)^2}{\abs{B_{s\wedge T_\ep}}^2}\right)ds & N=2, \\
+                + \sum_{i=1}^{2}\int_0^t\frac{B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^2}dB_s^i
+                + \frac{1}{2}\sum_{i=1}^{2}\int_0^t\frac{1}{\abs{B_{s\wedge T_\ep}}^2}\left(1-\frac{2(B_{s\wedge T_\ep}^i)^2}{\abs{B_{s\wedge T_\ep}}^2}\right)ds & N=2, \\
                 f(\abs{x})
                 + \sum_{i=1}^{N}\int_0^t\frac{(2-N)B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^N}dB_s^i
                 + \frac{1}{2}\sum_{i=1}^{N}\int_0^t\frac{2-N}{\abs{B_{s\wedge T_\ep}}^N}\left(1-\frac{N(B_{s\wedge T_\ep}^i)^2}{\abs{B_{s\wedge T_\ep}}^2}\right)ds & N\ge3
@@ -134,12 +134,22 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             &= 
             \begin{cases}
                 f(\abs{x})
-                + \sum_{i=1}^{N}\int_0^t\frac{B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^2}dB_s^i & N=2, \\
+                + \sum_{i=1}^{2}\int_0^t\frac{B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^2}dB_s^i
+                + \frac{1}{2}\int_0^t\frac{1}{\abs{B_{s\wedge T_\ep}}^2}\left(2-2\sum_{i=1}^{2}\frac{(B_{s\wedge T_\ep}^i)^2}{\abs{B_{s\wedge T_\ep}}^2}\right)ds & N=2, \\
+                f(\abs{x})
+                + \sum_{i=1}^{N}\int_0^t\frac{(2-N)B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^N}dB_s^i
+                + \frac{1}{2}\sum_{i=1}^{N}\int_0^t\frac{2-N}{\abs{B_{s\wedge T_\ep}}^N}\left(N-N\sum_{i=1}^{N}\frac{(B_{s\wedge T_\ep}^i)^2}{\abs{B_{s\wedge T_\ep}}^2}\right)ds & N\ge3
+            \end{cases} \\
+            &= 
+            \begin{cases}
+                f(\abs{x})
+                + \sum_{i=1}^{2}\int_0^t\frac{B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^2}dB_s^i & N=2, \\
                 f(\abs{x})
                 + \sum_{i=1}^{N}\int_0^t\frac{(2-N)B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^N}dB_s^i & N\ge3
             \end{cases}
         \end{align}
-        が成り立ち，任意の $N\ge2$ と $1\le i\le N$ に対し $\frac{B_{t\wedge T_\ep}^i}{\abs{B_{t\wedge T_\ep}}^N}\in L_{\mathrm{loc}}^2(B_t^i)$ であるので $f(\abs{B_{t\wedge T_\ep}})$ はCLM.
+        が成り立ち，任意の $N\ge2$ と $1\le i\le N$ に対し $\frac{B_{t\wedge T_\ep}^i}{\abs{B_{t\wedge T_\ep}}^N}\in L_{\mathrm{loc}}^2(B_t^i)$ であるので $\int_0^t\frac{B_{s\wedge T_\ep}^i}{\abs{B_{s\wedge T_\ep}}^N}dB_s^i$ はCLM.
+        したがって $f(\abs{B_{t\wedge T_\ep}})$ はCLM.
     \end{proof}
     
     \item
