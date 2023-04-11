@@ -12,7 +12,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \item
     $\abs{B_t}^2$ は連続semimartingaleであり，$\abs{B_t}^2$ のmartingale partがtrue martingaleであることを示せ．
     \begin{proof}\textcolor{red}{（途中）}
-        $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingaleなので，伊藤の公式が適用できて，a.s.で任意の $t\ge0$ に対し
+        $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingaleなので，It\^{o}'s formulaが適用できて，a.s.で任意の $t\ge0$ に対し
         \begin{align}
             \abs{B_t}^2
             &= \abs{B_0}^2
@@ -118,7 +118,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         $$
 
         ここで，任意の $t\ge0,\omega\in\Omega$ に対し $\abs{B_{t\wedge T_\ep}(\omega)}\ge\ep$ が成り立つので，$B_{t\wedge T_\ep}\in\real^N\setminus\{0\}.$
-        伊藤の公式より
+        It\^{o}'s formulaより
         \begin{align}
             & f(\abs{B_{t\wedge T_\ep}})
             = F(B_{t\wedge T_\ep}) \\
@@ -199,7 +199,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     となることを示せ．
     \begin{proof}
         $F(x)=\abs{x}$ と定めると $F\in C^\infty(\real^N\setminus\{0\})$ であり，$\frac{\partial F}{\partial x_i}(x)=\frac{x_i}{\abs{x}}, \frac{\partial^2 F}{\partial x_i^2}(x)=\frac{\abs{x}^2-x_i^2}{\abs{x}^3}.$
-        a.s.で任意の $t\ge0$ に対し $B_t\in\real^N\setminus\{0\}$ より，伊藤の公式から
+        a.s.で任意の $t\ge0$ に対し $B_t\in\real^N\setminus\{0\}$ より，It\^{o}'s formulaから
         \begin{align}
             \abs{B_t}
             = F(B_t)
@@ -223,7 +223,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     a.s.で$t\to\infty$ としたとき $\abs{B_t}\to\infty$ となることを示せ（ヒント：$\abs{B_t}^{2-N}$ が非負supermartingaleであることを確かめよ）．
     \begin{proof}\textcolor{red}{（途中）}
         $F(x)=\abs{x}^{2-N}$ と定めると $F\in C^\infty(\real^N\setminus\{0\})$ であり，$\frac{\partial F}{\partial x_i}(x)=\frac{(2-N)x_i}{\abs{x}^N}, \frac{\partial^2 F}{\partial x_i^2}(x)=\frac{2-N}{\abs{x}^N}\left(1-\frac{Nx_i^2}{\abs{x}^2}\right).$
-        a.s.で任意の $t\ge0$ に対し $B_t\in\real^N\setminus\{0\}$ より，伊藤の公式と4.の証明から
+        a.s.で任意の $t\ge0$ に対し $B_t\in\real^N\setminus\{0\}$ より，It\^{o}'s formulaと4.の証明から
         \begin{align}
             \abs{B_t}^{2-N}
             = F(B_t)
