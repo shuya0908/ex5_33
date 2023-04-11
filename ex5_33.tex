@@ -21,13 +21,13 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             &= \abs{x}^2
             + \sum_{i=1}^{N}\int_{0}^{t}\frac{\partial}{\partial x_i}\abs{B_s}^2 dB_s^i
             + \frac{1}{2}\sum_{i=1}^{N}\int_{0}^{t}\frac{\partial^2}{\partial x_i^2}\abs{B_s}^2 ds
-            \quad(i\neq j\implies\gen{B^i,B^j}=0)\\
+            \quad(\because i\neq j\implies\gen{B^i,B^j}=0)\\
             &= \abs{x}^2
             + 2\sum_{i=1}^{N}\int_{0}^{t}B_s^i dB_s^i
             + Nt.
         \end{align}
         \begin{screen}
-            $\because)$ $\abs{B}^2=(B^1)^2+\dotsb+(B^N)^2$ より $\frac{\partial}{\partial x_i}\abs{B}^2=2B^i, \frac{\partial^2}{\partial x_i^2}\abs{B}^2=2.$
+            $\because)$ $\abs{B}^2=\sum_{i=1}^{N}(B^i)^2$ より $\frac{\partial}{\partial x_i}\abs{B}^2=2B^i, \frac{\partial^2}{\partial x_i^2}\abs{B}^2=2.$
         \end{screen}
     \end{proof}
     
