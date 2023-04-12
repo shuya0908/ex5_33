@@ -221,7 +221,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \item
     $N\ge3$を仮定する．
     a.s.で$t\to\infty$ としたとき $\abs{B_t}\to\infty$ となることを示せ（ヒント：$\abs{B_t}^{2-N}$ が非負supermartingaleであることを確かめよ）．
-    \begin{proof}\textcolor{red}{（途中）}
+    \begin{proof}
         $F(x)=\abs{x}^{2-N}$ と定めると $F\in C^\infty(\real^N\setminus\{0\})$ であり，$\frac{\partial F}{\partial x_i}(x)=\frac{(2-N)x_i}{\abs{x}^N}, \frac{\partial^2 F}{\partial x_i^2}(x)=\frac{2-N}{\abs{x}^N}\left(1-\frac{Nx_i^2}{\abs{x}^2}\right).$
         a.s.で任意の $t\ge0$ に対し $B_t\in\real^N\setminus\{0\}$ より，It\^{o}'s formulaと4.の証明から
         \begin{align}
