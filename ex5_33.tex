@@ -241,8 +241,9 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         \le E[\abs{B_0}^{2-N}]
         = \abs{x}^{2-N}
         $$
-        が成り立つので，$\abs{B}^{2-N}$ は $L^1$-bdd.
-        よってThm. 3.19より $\abs{B_{\infty}}^{2-N}$ がa.s.で存在する．
+        が成り立つので，$\sup_{t\ge0}E[\abs{B_t}^{2-N}]<\infty$ より $\abs{B}^{2-N}$ は $L^1$-bdd.
+        よってThm. 3.19より $\abs{B_{\infty}}^{2-N}$ がa.s.で存在するので，$\lim_{t\to\infty}\abs{B_t}$ がa.s.で存在する．
+        a.s.で $\limsup_{t\to\infty}B_t^1=\infty$ となるので，a.s.で $\lim_{t\to\infty}\abs{B_t}=\infty.$
     \end{proof}
     
     \item
