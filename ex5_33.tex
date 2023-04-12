@@ -250,8 +250,55 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     $N=3$ を仮定する．
     Gaussian densityの形式を用いて，r.v.の族 $(\abs{B_t}^{-1})_{t\ge0}$ が $L^2$-bdd.であることを確かめよ．
     また $(\abs{B_t}^{-1})_{t\ge0}$ がCLMであり，かつtrue martingaleでないことを示せ．
-    \begin{proof}\textcolor{red}{（途中）}
-        
+    \begin{proof}
+        まず $(\abs{B_t}^{-1})_{t\ge0}$ が $L^1$-bdd.であることを示す．
+        $\delta:=\frac{\abs{x}}{2}(>0)$ と定める．
+        このとき
+        \begin{align}
+            E[\abs{B_t}^{-2}]
+            &= \int_{\real^3}\abs{y}^{-2}p(y)dy
+            = \int_{\real^3}\frac{1}{\abs{y}^2(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{y-x}^2}{2t}\right)}dy \\
+            &= \int_{\abs{y}<\delta}\frac{1}{\abs{y}^2(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{y-x}^2}{2t}\right)}dy
+            + \int_{\abs{y}\ge\delta}\frac{1}{\abs{y}^2(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{y-x}^2}{2t}\right)}dy \\
+            &=: I_1(t) + I_2(t).
+        \end{align}
+
+        任意の $t>0$ に対し
+        \begin{align}
+            I_2(t)
+            \le \frac{1}{\delta^2}\int_{\real^3}\frac{1}{(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{y-x}^2}{2t}\right)}dy
+            \le \frac{1}{\delta^2}
+        \end{align}
+        と評価できることから $I_2$ は有界．
+        あとは $I_1(t)$ が任意の $t>0$ において有界であることを示せば十分．
+        $\abs{y}<\delta=\frac{\abs{x}}{2}\implies \abs{y-x}\ge\abs{x}-\abs{y}>\frac{\abs{x}}{2}$ であることより
+        \begin{align}
+            I_1(t)
+            \le \frac{1}{(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{x}^2}{8t}\right)}\int_{\real^3}\frac{1}{\abs{y}^2}dy
+            = \frac{1}{(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{x}^2}{8t}\right)}\cdot4\pi\delta
+        \end{align}
+        が成り立つ．
+        $$
+        \varphi(t)
+        = \frac{1}{(2\pi t)^{3/2}}\exp{\left(-\frac{\abs{x}^2}{8t}\right)}
+        $$
+        で定めると $\varphi$ は $(0,\infty)$ 上連続かつ $\lim_{t\downarrow0+}\varphi(t)=0, \lim_{t\to\infty}\varphi(t)=0.$
+        よって $\varphi$ は有界なのである $M>0$ が存在し，$\sup_{t>0}\abs{\varphi(t)}\le M<\infty.$
+        よって $\sup_{t>0}I_1(t)\le 4\pi M\delta$ と評価できるので $I_1$ も有界．
+        ゆえに $(\abs{B_t}^{-1})_{t\ge0}$ は $L^2$-bdd.
+
+        次に $(\abs{B_t}^{-1})_{t\ge0}$ がCLMであるがtrue martingaleでないことを示す．
+        7. の証明よりCLMであることが言えるので $(\abs{B_t}^{-1})_{t\ge0}$ がtrue martingaleであると仮定すると $L^2$-bdd. martingale.
+        a.s.で $\lim_{t\to\infty}\abs{B_t}=\infty(\implies \abs{B_\infty}^{-1}=0)$ とThm. 4.13を合わせて
+        $$
+        0
+        = E[\abs{B_\infty}^{-2}]
+        = E[\abs{B_0}^{-2}]
+        + E[\gen{\abs{B}^{-1}, \abs{B}^{-1}}_\infty]
+        > 0
+        $$
+        がわかるが，これは矛盾．
+        よって $(\abs{B_t}^{-1})_{t\ge0}$ はCLMであるがtrue martingaleでない．
     \end{proof}
 \end{enumerate}
 \end{document}
