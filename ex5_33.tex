@@ -177,7 +177,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         $\ep\to0$ とすると $N=2$ のとき $f(\ep)\to -\infty, N\ge3$ のとき $f(\ep)\to +\infty$ より，$P(T_\ep<S_R)\to0$ となることがわかる．
 
         次にa.s.で任意の $t\ge0$ に対し $B_t\neq0$ を示す．
-        $\ep_n\downarrow0$ かつ $\sum_{n=1}^{\infty}P(T_{\ep_n}<S_n)<\infty$ を満たす正の実数列 $\{\ep_n\}$ を選ぶと，Borel-Cantelliの補題より $A:=\limsup_{n\to\infty}\{T_{\ep_n}<S_n\}$ に対し $P(A)=0.$
+        $\ep_n\downarrow0$ かつ $\sum_{n=1}^{\infty}P(T_{\ep_n}<S_n)<\infty$ を満たす正の実数列 $\{\ep_n\}$ を選ぶと，Borel-Cantelliの補題より $A:=\bigcap_{m\ge1}\bigcup_{n\ge m}\{T_{\ep_n}<S_n\}$ に対し $P(A)=0.$
         このとき任意の $\omega\in A^c, t\ge0$ に対し $B_t(\omega)\neq0.$
 
         \begin{screen}
