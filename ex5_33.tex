@@ -11,7 +11,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
 \begin{enumerate}
     \item
     $\abs{B_t}^2$ は連続semimartingaleであり，$\abs{B_t}^2$ のmartingale partがtrue martingaleであることを示せ．
-    \begin{proof}\textcolor{red}{（途中）}
+    \begin{proof}
         $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingaleなので，It\^{o}'s formulaが適用できて，a.s.で任意の $t\ge0$ に対し
         \begin{align}
             \abs{B_t}^2
@@ -23,12 +23,47 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             + \frac{1}{2}\sum_{i=1}^{N}\int_{0}^{t}\frac{\partial^2}{\partial x_i^2}\abs{B_s}^2 ds
             \quad(\because i\neq j\implies\gen{B^i,B^j}=0)\\
             &= \abs{x}^2
-            + 2\sum_{i=1}^{N}\int_{0}^{t}B_s^i dB_s^i
+            + \sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i
             + Nt.
         \end{align}
         \begin{screen}
             $\because)$ $\abs{B}^2=\sum_{i=1}^{N}(B^i)^2$ より $\frac{\partial}{\partial x_i}\abs{B}^2=2B^i, \frac{\partial^2}{\partial x_i^2}\abs{B}^2=2.$
         \end{screen}
+
+        a.s.で任意の $t\ge0$ に対し
+        $$
+        \int_{0}^{t}(2B_s^i)^2 ds
+        \le 4t\sup_{0\le s\le t}(B_s^i)^2
+        < \infty
+        $$
+        が成り立つので，任意の $1\le i\le N$ に対し $2B^i\in L_{\mathrm{loc}}^2(B^i).$
+        したがって $(\sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i)_{t\ge0}$ は CLM.
+        また $(\abs{x}^2+Nt)_{t\ge0}$ はFVなので，$\abs{B}^2$ は連続semimartingaleである．
+
+        次に $(\sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i)_{t\ge0}$ がtrue martingaleであることを示す．
+        Doob's ineq. in $L^2$ より任意の $1\le i\le N$ に対し
+        \begin{align}
+            E[\gen{\sum_{i=1}^{N}\int_{0}^{\cdot}2B_s^i dB_s^i, \sum_{i=1}^{N}\int_{0}^{\cdot}2B_s^i dB_s^i}_t]
+            &= E[\sum_{i=1}^{N}\int_{0}^{t}(2B_s^i)^2 ds] \\
+            &\le 4t\sum_{i=1}^{N}E[\sup_{0\le s\le t}(B_s^i)^2] \\
+            &\le 4t2^2\sum_{i=1}^{N}E[(B_s^i)^2] \\
+            &= 16t(\abs{x}^2+Nt).
+        \end{align}
+        \begin{screen}
+            $\because)$
+            任意の $1\le i\le N$ に対し
+            \begin{align}
+                t
+                &= E[(B_t^i-x_i)^2] \\
+                &= E[(B_t^i)^2]
+                - 2x_iE[B_t^i]
+                + E[x_i^2] \\
+                &= E[(B_t^i)^2] - x_i^2
+            \end{align}
+            より $E[(B_t^i)^2]=x_i^2+t.$
+        \end{screen}
+
+        よってThm. 4.13(ii)より $(\sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i)_{t\ge0}$ はtrue martingale.
     \end{proof}
     
     \item
