@@ -110,10 +110,10 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         \begin{align}
             \abs{B_t}^2
             &= \abs{x}^2
-            + 2\sum_{i=1}^{N}\int_{0}^{t}B_s^i dB_s^i
+            + \sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i
             + Nt \\
             &= \abs{x}^2
-            + 2\sum_{i=1}^{N}\int_{0}^{t}\abs{B_s}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
+            + \sum_{i=1}^{N}\int_{0}^{t}2\abs{B_s}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
             + Nt \\
             &= \abs{x}^2
             + 2\int_{0}^{t}\abs{B_s}\sum_{i=1}^{N}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i
