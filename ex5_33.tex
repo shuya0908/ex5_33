@@ -12,9 +12,11 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \item
     $\abs{B_t}^2$ は連続semimartingaleであり，$\abs{B_t}^2$ のmartingale partがtrue martingaleであることを示せ．
     \begin{proof}
-        $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingaleなので，It\^{o}'s formulaが適用できて，a.s.で任意の $t\ge0$ に対し
+        $B_t^{1},\dotsb,B_t^{N}$ はBMより連続semimartingale.
+        よって $F(x)=\abs{x}^2$ に対してIt\^{o}'s formulaが適用できて，a.s.で任意の $t\ge0$ に対し
         \begin{align}
             \abs{B_t}^2
+            = F(B_t)
             &= \abs{B_0}^2
             + \sum_{i=1}^{N}\int_{0}^{t}\frac{\partial}{\partial x_i}\abs{B_s}^2 dB_s^i
             + \frac{1}{2}\sum_{i,j=1}^{N}\int_{0}^{t}\frac{\partial^2}{\partial x_i\partial x_j}\abs{B_s}^2 d\gen{B^i,B^j}_s \\
@@ -27,7 +29,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             + Nt.
         \end{align}
         \begin{screen}
-            $\because)$ $\abs{B}^2=\sum_{i=1}^{N}(B^i)^2$ より $\frac{\partial}{\partial x_i}\abs{B}^2=2B^i, \frac{\partial^2}{\partial x_i^2}\abs{B}^2=2.$
+            $\because)$ $\abs{B}^2=\sum_{i=1}^{N}(B^i)^2$ より $\frac{\partial F}{\partial x_i}(B)=2B^i, \frac{\partial^2 F}{\partial x_i^2}(B)=2.$
         \end{screen}
 
         a.s.で任意の $t\ge0$ に対し
@@ -41,7 +43,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         また $(\abs{x}^2+Nt)_{t\ge0}$ はFVなので，$\abs{B}^2$ は連続semimartingaleである．
 
         次に $(\sum_{i=1}^{N}\int_{0}^{t}2B_s^i dB_s^i)_{t\ge0}$ がtrue martingaleであることを示す．
-        Doob's ineq. in $L^2$ より任意の $1\le i\le N$ に対し
+        Doob's ineq. in $L^2$ より
         \begin{align}
             E[\gen{\sum_{i=1}^{N}\int_{0}^{\cdot}2B_s^i dB_s^i, \sum_{i=1}^{N}\int_{0}^{\cdot}2B_s^i dB_s^i}_t]
             &= E[\sum_{i=1}^{N}\int_{0}^{t}(2B_s^i)^2 ds] \\
