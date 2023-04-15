@@ -75,7 +75,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     \end{align}
     と定める（ただし $\abs{B_s}=0$ のとき $\frac{B_{s}^{i}}{\abs{B_s}}=0$ とする）．
     $\beta_t$ の定義に現れる確率積分の定義を正当化し，さらに $(\beta_t)_{t\ge0}$ が0スタートの $(\clf_t)$-BMであることを示せ．
-    \begin{proof}\textcolor{red}{（途中）}
+    \begin{proof}
         任意の $1\le i\le N$ に対し $\frac{B^i}{\abs{B}}\le1$ より，a.s.で任意の $t\ge0$ に対し
         \begin{align}
             \int_0^t \left(\frac{B_s^i}{\abs{B_s}}\right)^2 ds
@@ -84,7 +84,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         が成り立つので，任意の $1\le i\le N$ に対し $\frac{B^i}{\abs{B}}\in L_{\mathrm{loc}}^2(B^i).$
         よってThm 5.6より $\int_{0}^{t}\frac{B_{s}^{i}}{\abs{B_s}}dB_s^i$ は確率積分の意味でwell-definedなCLMである．
 
-        したがって $\beta$ は $(\clf_t)$-CLMである\nazo．
+        したがって $\beta$ は $(\clf_t)$-adaptedなCLMである．
         ここで
         \begin{align}
             \gen{\beta, \beta}_t
@@ -93,7 +93,7 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
             &= \int_{0}^{t}\frac{\sum_{i=1}^{N}(B_{s}^{i})^2}{\abs{B_s}^2}ds
             = \int_{0}^{t}\frac{\abs{B_s}^2}{\abs{B_s}^2}ds = t
         \end{align}
-        が成り立つことより，$\beta$ は0スタートの $(\clf_t)$-BMである．
+        が成り立つことより，Thm. 5.12から $\beta$ は0スタートの $(\clf_t)$-BMである．
     \end{proof}
     
     \item
