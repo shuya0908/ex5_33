@@ -196,8 +196,8 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
     となることを示せ．
     また $\ep\to0$ としたとき $P(T_\ep<S_R)\to0$ となることを確かめ，a.s.で任意の $t\ge0$ に対し $B_t\neq0$ となることを示せ．
     \begin{proof}
-        $T:=T_\ep\wedge S_R$ とするとa.s.で任意の $t\ge0$ に対し $f(\abs{B_t^T})\le R.$
-        $f(\abs{B_{t\wedge T_\ep}})$ がCLMであることから $f(\abs{B_t^T})$ は有界なCLMなので，Prop. 4.7(ii)よりUIM.
+        $T:=T_\ep\wedge S_R$ とするとa.s.で任意の $t\ge0$ に対しある $M>0$ が存在し $f(\abs{B_t^T})\le M.$
+        $(f(\abs{B_{t\wedge T_\ep}}))_{t\ge0}$ がCLMであることから $(f(\abs{B_t^T}))_{t\ge0}$ は有界なCLMなので，Prop. 4.7(ii)より $(f(\abs{B_t^T}))_{t\ge0}$ はUIM.
         ゆえにoptional stopping theoremより
         \begin{align}
             f(\abs{x})
@@ -213,17 +213,8 @@ $B_t=(B_t^{1},B_t^{2},\dotsb,B_t^{N})$ を $x=(x_1,\dotsb,x_N)(\in\real^N)$ ス�
         $\ep\to0$ とすると $N=2$ のとき $f(\ep)\to -\infty, N\ge3$ のとき $f(\ep)\to +\infty$ より，$P(T_\ep<S_R)\to0$ となることがわかる．
 
         次にa.s.で任意の $t\ge0$ に対し $B_t\neq0$ を示す．
-        $\ep_n\downarrow0$ かつ $\sum_{n=1}^{\infty}P(T_{\ep_n}<S_n)<\infty$ を満たす正の実数列 $\{\ep_n\}$ を選ぶと，Borel-Cantelliの補題より $A:=\bigcap_{m\ge1}\bigcup_{n\ge m}\{T_{\ep_n}<S_n\}$ に対し $P(A)=0.$
-        このとき任意の $\omega\in A^c, t\ge0$ に対し $B_t(\omega)\neq0.$
-
-        \begin{screen}
-            $\because)$
-            $\omega\in A^c$ に対し $B_t(\omega)=0$ を満たす $t>0$ が存在すると仮定すると，任意の $n\ge1$ に対し $T_{\ep_n}(\omega)<t$ であり，$A^c$ の定め方からある $m\ge1$ が存在して，任意の $n\ge m$ に対し $S_n(\omega)<t.$
-            stopping timeの列 $(S_n(\omega))_{n\ge1}$ はnondecreasingなので，$\lim_{n\to\infty}S_n(\omega)(\le t)$ が存在する．
-            これを $s$ とすると $B_s(\omega)=\infty$ となるが，$B$ の連続性より矛盾．
-        \end{screen}
-
-        以上よりa.s.で任意の $t\ge0$ に対し $B_t\neq0.$
+        $R\to\infty$ とすると $S_R\to\infty$ となるので，先ほどの証明と合わせて $P(T_0<\infty)=0$ がわかる．
+        したがってa.s.で $T_0=\inf\set{t\ge0}{\abs{B_t}=0}=\infty$，つまり $\abs{B_t}\neq0$ となるので，a.s.で任意の $t\ge0$ に対し $B_t\neq0.$
     \end{proof}
     
     \item
